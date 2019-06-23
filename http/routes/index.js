@@ -2,7 +2,12 @@ const ping = require('./ping');
 const healthcheck = require('./healthcheck');
 
 /**
- * Async handlers
+ * Track
+ */
+const track = require('./track');
+
+/**
+ * Resilient Async Handlers
  * @param {Function<Promise>} fn route handler or middleware
  * @return {Promise}
  */
@@ -12,6 +17,10 @@ const asyncWrap = (fn) => (...args) =>
     : fn(...args);
 
 module.exports = (app) => {
+  // Business
+  app.post('/track', asyncWrap(track));
+
+  // Status
   app.get('/ping', asyncWrap(ping));
   app.get('/healthcheck', asyncWrap(healthcheck));
 };

@@ -10,7 +10,7 @@
  */
 class Exception extends Error {
   /**
-   * @param {String} err error message
+   * @param {Error} err error instance
    */
   constructor(err) {
     super(err.message);
