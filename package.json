@@ -15,7 +15,7 @@
     "dotenv": "^8.0.0",
     "eslint-config-prettier": "^5.0.0",
     "express": "^4.17.1",
-    "lodash": "^4.17.19"
+    "lodash": "^4.17.21"
   },
   "engines": {
     "node": ">=8.13"
